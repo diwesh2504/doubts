@@ -29,6 +29,7 @@ const upload=multer({storage})
 router.post("/upload",upload.single('profile_pic_upload'),async (req,res)=>{
   res.json({"file":req.file})
 })
+// Doubt
 router.get("/viewprofilepic/:id", async (req,res)=>{
   gfs.files.find({filename:`profile_pic${req.params.id}`}).toArray((err,files)=>{
     if(files){
